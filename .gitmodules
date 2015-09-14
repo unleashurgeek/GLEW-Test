@@ -1,0 +1,3 @@
+[submodule "deps/GLEW"]
+	path = deps/GLEW
+	url = https://github.com/unleashurgeek/glew-cmake
