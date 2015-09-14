@@ -7,4 +7,4 @@ endif()
 include_directories("${GLFW_SOURCE_DIR}/include"
                     "${GLEW_SOURCE_DIR}/include")
 
-add_executable(Test main.c)
+add_executable(Test main.cpp)

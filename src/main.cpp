@@ -1,7 +1,7 @@
 // A simple program
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#define GLEW_STATIC
+#include <GL\glew.h>
 #include <GLFW\glfw3.h>
 int main (int argc, char *argv[])
 {
