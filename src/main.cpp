@@ -19,31 +19,16 @@ int main()
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
     glfwWindowHint(GLFW_AUTO_ICONIFY, GL_FALSE);
 
-    const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
-    GLFWwindow* window = glfwCreateWindow(mode->width, mode->height, "OpenGL Test", glfwGetPrimaryMonitor(), nullptr);
-    if (!window)
-    {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        exit(EXIT_FAILURE);
-    }
-
+    GLFWwindow* window = glfwCreateWindow(800, 800, "OpenGL Test", nullptr, nullptr);
     glfwMakeContextCurrent(window);
-    glfwSwapInterval(1);
-
-    glewExperimental = GL_TRUE;
-    if (glewInit() != GLEW_OK)
-    {
-        std::cout << "Failed to initialize GLEW" << std::endl;
-        exit(EXIT_FAILURE);
-    }
-    
     glfwSetKeyCallback(window, key_callback);
 
-    int width, height;
-    glfwGetFramebufferSize(window, &width, &height);
-    glViewport(0, 0, width, height);
+    glewExperimental = GL_TRUE;
+    glewInit();
+
+    glViewport(0, 0, 800, 800);
+
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
