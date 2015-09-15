@@ -111,7 +111,7 @@ int main()
     glDeleteVertexArrays(1, &VAO);
 
     glfwTerminate();
-    exit(EXIT_SUCCESS);
+    return 0;
 }
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
